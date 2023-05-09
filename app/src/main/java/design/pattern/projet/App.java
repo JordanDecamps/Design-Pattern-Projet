@@ -1,21 +1,29 @@
 package design.pattern.projet;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
+public class App extends JFrame {
+    public App() {
+        initGUI();
+    }
 
-public class App {
-    public String getGreeting() {
-        Coffre coffre = new Coffre();
-        System.out.println(coffre);
-        Unite unite= new Unite(5, TypeUnite.MINEUR );
-        System.out.println(unite);
-        return "";
+    private void initGUI() {
+        setTitle("Jeu de Plateau");
+        setSize(800, 800);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        PlateauGUI plateau = new PlateauGUI(10);
+        getContentPane().add(plateau);
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                App app = new App();
+                app.setVisible(true);
+            }
+        });
     }
 }
