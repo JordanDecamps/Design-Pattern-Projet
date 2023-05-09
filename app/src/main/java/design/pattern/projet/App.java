@@ -5,7 +5,8 @@ package design.pattern.projet;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        Coffre coffre = new Coffre();
+        System.out.println(coffre);
     }
 
     public static void main(String[] args) {
