@@ -1,23 +1,16 @@
+import java.util.ArrayList;
+
 public class Coffre {
 
-    public int Or;
-    public int Bois;
-    public int Pierre;
-    public int Nourriture;
+    public ArrayList<Ressources> ressources;
 
-
-    public Coffre(int or, int bois, int pierre, int nourriture) {
-        Or = or;
-        Bois = bois;
-        Pierre = pierre;
-        Nourriture = nourriture;
+    public Coffre(ArrayList<Ressources> ressources) {
+        this.ressources = ressources;
     }
-
 
     @Override
     public String toString() {
-        return "Coffre [Or=" + Or + ", Bois=" + Bois + ", Pierre=" + Pierre + ", Nourriture=" + Nourriture + "]";
+        return "Coffre [ressources=" + ressources + "]";
     }
-
 
 }
