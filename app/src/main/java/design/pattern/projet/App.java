@@ -13,7 +13,7 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        PlateauGUI plateau = new PlateauGUI(10);
+        PlateauGUI plateau = new PlateauGUI(20);
         getContentPane().add(plateau);
     }
 
