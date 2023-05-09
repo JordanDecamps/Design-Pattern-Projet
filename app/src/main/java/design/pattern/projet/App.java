@@ -7,6 +7,7 @@ public class App {
     public String getGreeting() {
         Coffre coffre = new Coffre();
         System.out.println(coffre);
+        return "";
     }
 
     public static void main(String[] args) {
