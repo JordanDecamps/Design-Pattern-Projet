@@ -7,6 +7,8 @@ public class App {
     public String getGreeting() {
         Coffre coffre = new Coffre();
         System.out.println(coffre);
+        Unite unite= new Unite(5, TypeUnite.MINEUR );
+        System.out.println(unite);
         return "";
     }
 

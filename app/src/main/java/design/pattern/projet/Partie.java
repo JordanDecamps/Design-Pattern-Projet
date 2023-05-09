@@ -1,3 +1,5 @@
+package design.pattern.projet;
+
 import java.util.List;
 
 public class Partie {
