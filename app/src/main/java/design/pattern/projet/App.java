@@ -20,13 +20,16 @@ public class App extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
+        /*SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
                 App app = new App();
                 app.setVisible(true);
             }
-        });
+        });*/
+        OutilsFactory outilsFactory = new OutilsFactory();
+        Outils mahache= outilsFactory.getOutils("HACHE");
+        mahache.Recolter();
         /*Unite unite1 = new Unite( 2, TypeUnite.BUCHERON);
         Unite unite2 = new Unite( 3, TypeUnite.MINEUR);
         ArrayList liste = new ArrayList<>();
