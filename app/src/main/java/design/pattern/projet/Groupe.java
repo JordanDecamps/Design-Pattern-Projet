@@ -11,10 +11,7 @@ public class Groupe {
 
     @Override
     public String toString() {
-        String texte = "";
-        for (Unite element : listeUnite) {
-            texte+= element;
-        }
+       
         return "Groupe [listeUnite=" + listeUnite + "]";
     }
 
