@@ -34,6 +34,7 @@ public class App extends JFrame {
         mahoue.Recolter();
         Outils mapioche= outilsFactory.getOutils("PIOCHE");
         mapioche.Recolter();*/
+       
         Unite unite1 = new Unite( 2, TypeUnite.BUCHERON);
         Unite unite2 = new Unite( 3, TypeUnite.MINEUR);
         unite1.outils.Recolter();

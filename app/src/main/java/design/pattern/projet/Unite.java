@@ -1,4 +1,6 @@
 package design.pattern.projet;
+
+
 public class Unite {
     public int vitesse;
     public TypeUnite type;
@@ -6,7 +8,7 @@ public class Unite {
     public Unite(int vitesse, TypeUnite type) {
         this.vitesse = vitesse;
         this.type = type;
-        this.outils= new OutilsFactory().getOutils(type);
+        this.outils=  OutilsFactory.getInstance().getOutils(type);
 
 
     }
