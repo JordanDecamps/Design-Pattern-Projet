@@ -3,14 +3,14 @@ package design.pattern.projet;
 public class OutilsFactory {
 
     
-   public Outils getOutils(String outils){	
-    if(outils.equals("HACHE")){
+   public Outils getOutils(TypeUnite type){	
+    if(type == TypeUnite.BUCHERON){
        return new Hache();
     }
-    if (outils.equals("HOUE")){
+    if (type == TypeUnite.PAYSAN){
         return new Houe();
     }
-    if(outils.equals("PIOCHE")){
+    if(type == TypeUnite.MINEUR){
         return new Pioche();
     }
     

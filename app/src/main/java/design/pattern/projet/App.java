@@ -27,20 +27,22 @@ public class App extends JFrame {
                 app.setVisible(true);
             }
         });*/
-        OutilsFactory outilsFactory = new OutilsFactory();
+        /*OutilsFactory outilsFactory = new OutilsFactory();
         Outils mahache= outilsFactory.getOutils("HACHE");
         mahache.Recolter();
         Outils mahoue= outilsFactory.getOutils("HOUE");
         mahoue.Recolter();
         Outils mapioche= outilsFactory.getOutils("PIOCHE");
-        mapioche.Recolter();
-        /*Unite unite1 = new Unite( 2, TypeUnite.BUCHERON);
+        mapioche.Recolter();*/
+        Unite unite1 = new Unite( 2, TypeUnite.BUCHERON);
         Unite unite2 = new Unite( 3, TypeUnite.MINEUR);
+        unite1.outils.Recolter();
+        unite2.outils.Recolter();
         ArrayList liste = new ArrayList<>();
         liste.add(unite1);
         liste.add(unite2);
         Groupe groupe = new Groupe(liste);
-        System.out.println(groupe);*/
+        System.out.println(groupe);
 
     }
 }
