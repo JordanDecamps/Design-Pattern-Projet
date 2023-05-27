@@ -11,8 +11,9 @@ Ce projet a pour but de mettre en pratique les design patterns vus en cours. Il 
 
 ## Installation
 Pour lancer le jeu, il suffit de lancer le fichier `App.java` qui se trouve dans le dossier `src`. Le jeu se lance alors dans une fenêtre.
-Nous avons également setup le projet pour être build via Gradle. Pour cela, il suffit de lancer la commande `gradle run` dans le dossier du projet.
-Si vous souhaitez build le projet, il suffit de lancer la commande `gradle build` dans le dossier du projet. Le jar se trouve alors dans le dossier `build/libs`.
+
+### Nous avons également setup le projet pour être build via Gradle. Pour cela, il suffit de lancer la commande `gradle run` dans le dossier du projet.
+### Si vous souhaitez build le projet, il suffit de lancer la commande `gradle build` dans le dossier du projet. Le jar se trouve alors dans le dossier `build/libs`.
 
 ## Fonctionnement
 
