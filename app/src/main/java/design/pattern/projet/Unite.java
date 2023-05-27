@@ -9,7 +9,7 @@ public class Unite {
     public Unite(int vitesse, TypeUnite type) {
         this.vitesse = vitesse;
         this.type = type;
-        this.outils=  OutilsFactory.getInstance().getOutils(type,coffre);
+        this.outils=  OutilsFactory.getInstance().getOutils(type);
 
 
     }

@@ -33,4 +33,18 @@ public class Case {
 
     }
 
+    public int enleverRessource(Ressources ressource, int quantite){
+        int val =listeRessourcesCase.get(ressource);
+        if (val - quantite >= 0 ){
+            listeRessourcesCase.put(ressource, val-quantite);
+            return quantite;
+        }
+        else{
+            listeRessourcesCase.put(ressource, 0);
+            return val;
+        }
+        
+        
+    }
+
 }

@@ -34,6 +34,10 @@ public class Partie extends JFrame {
 public void initPartie(){
   this.grille.initGrille();
 }
+public void tour(){
+  System.out.println(this.grille);
+  this.grille.tour(this.coffre);
+}
 public String toString(){
   String res="La partie:\n";
   res+=this.grille.toString();

@@ -1,16 +1,12 @@
 package design.pattern.projet;
 
-public class Houe implements Outils {
-
-    private Coffre coffre;
-
-    public Houe(Coffre coffre) {
-        this.coffre = coffre;
-    }
+public class Houe  implements Outils{
 
     @Override
-    public void Recolter() {
+    public void Recolter(Coffre coffre, Case position){
         System.out.println("Houe");
-        coffre.ajouterRessource(Ressources.Nourriture, 1);
+        coffre.ajouterRessource(Ressources.Nourriture, position.enleverRessource(Ressources.Nourriture, 1));
+        
     }
+    
 }

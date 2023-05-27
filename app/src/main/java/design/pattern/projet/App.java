@@ -42,6 +42,8 @@ public class App extends JFrame {
         System.out.println(groupe);*/
         partie.initPartie();
         System.out.println(partie);
+        partie.tour();
+        System.out.println(partie);
 
     }
 }

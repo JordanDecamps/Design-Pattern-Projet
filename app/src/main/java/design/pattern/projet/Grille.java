@@ -64,6 +64,15 @@ public class Grille {
         this.grille[random.nextInt(x)][random.nextInt(y)].listeUnitesCase.add(new Unite(1, type));
     }
 
+    public void tour(Coffre coffre){
+        for (int index = 0; index < x; index++) {
+            for (int index2 = 0; index2 < y; index2++) {
+                for (Unite unite : this.grille[index][index2].listeUnitesCase) {
+                    unite.outils.Recolter(coffre, this.grille[index][index2]);
+                }
+            }
+        }
+    }
  
 
     

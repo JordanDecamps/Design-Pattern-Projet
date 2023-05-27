@@ -1,7 +1,6 @@
 package design.pattern.projet;
 
 public interface Outils {
-
-    public void Recolter();
+    public void Recolter(Coffre coffre, Case position);
     
 }
