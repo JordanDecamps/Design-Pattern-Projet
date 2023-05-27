@@ -15,6 +15,11 @@ public class Coffre {
         }
     }
 
+    public void ajouterRessource(Ressources ressource, int quantite) {
+        int quantiteActuelle = ressources.getOrDefault(ressource, 0);
+        ressources.put(ressource, quantiteActuelle + quantite);
+    }
+
     @Override
     public String toString() {
         String texte = "";
