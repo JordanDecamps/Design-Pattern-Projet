@@ -1,5 +1,6 @@
 package design.pattern.projet;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
@@ -27,11 +28,15 @@ public class Partie extends JFrame {
     setVisible(true); // afficher la fenetre
 
   }
-  public Partie(int x, int y) {
-    initGUI(x, y); // initialisation de la fenetre
+  public Partie(int x , int y){
+    initGUI(x,y); // initialisation de la fenetre
     this.grille = new List[x][y];
-    this.coffre = new Coffre();
-
-  }
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < y; j++) {
+            this.grille[i][j] = new ArrayList<Unite>();  // Chaque élément du tableau est une ArrayList d'objets Unite
+        }
+    }
+    this.coffre= new Coffre();
+}
 
 }
