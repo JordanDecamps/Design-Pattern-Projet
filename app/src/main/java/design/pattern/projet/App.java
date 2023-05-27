@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class App extends JFrame {
-    private PlateauGUI plateau;  // filed to store the PlateauGUI instance
     public App() {
         initGUI();
     }
@@ -16,8 +15,8 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        plateau = new PlateauGUI(20);  // set the grid size to 20 x 20
-        getContentPane().add(plateau);
+        GlobalState.plateau = new PlateauGUI(20);
+        getContentPane().add(GlobalState.plateau);
     }
 
     public static void main(String[] args) {
@@ -30,7 +29,7 @@ public class App extends JFrame {
         ImageIcon icon = new ImageIcon("image/Basic_red_dot.png");
 
     // set image to a specific button
-        app.plateau.setImageAt(0, 0, icon);
+        GlobalState.plateau.setImageAt(1, 1, icon);
 
         // set 
         /*SwingUtilities.invokeLater(new Runnable() {
