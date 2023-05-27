@@ -22,7 +22,6 @@ public class Partie extends JFrame {
     setSize(800, 800);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocationRelativeTo(null);
-
     GlobalState.plateau = new PlateauGUI(x, y);
     getContentPane().add(GlobalState.plateau);
     setVisible(true); // afficher la fenetre

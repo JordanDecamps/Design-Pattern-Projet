@@ -26,6 +26,9 @@ public class App extends JFrame {
 
 
         Partie partie= new Partie(3,4);
+        // test de la classe GUI
+        ImageIcon icon = new ImageIcon("image/Basic_red_dot.png");
+        GlobalState.plateau.setImageAt(0, 0, icon);
         Unite unite1 = new Unite( 2, TypeUnite.BUCHERON);
         Unite unite2 = new Unite( 3, TypeUnite.MINEUR);
         unite1.outils.Recolter();
