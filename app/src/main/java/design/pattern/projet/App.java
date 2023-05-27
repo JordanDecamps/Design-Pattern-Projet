@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class App extends JFrame {
+    private PlateauGUI plateau;  // filed to store the PlateauGUI instance
     public App() {
         initGUI();
     }
@@ -15,11 +16,23 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        PlateauGUI plateau = new PlateauGUI(20);
+        plateau = new PlateauGUI(20);  // set the grid size to 20 x 20
         getContentPane().add(plateau);
     }
 
     public static void main(String[] args) {
+
+        // show the gui 
+        App app = new App();
+        app.setVisible(true);
+
+            // load image
+        ImageIcon icon = new ImageIcon("image/Basic_red_dot.png");
+
+    // set image to a specific button
+        app.plateau.setImageAt(0, 0, icon);
+
+        // set 
         /*SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -34,6 +47,8 @@ public class App extends JFrame {
         mahoue.Recolter();
         Outils mapioche= outilsFactory.getOutils("PIOCHE");
         mapioche.Recolter();*/
+
+
         Partie partie= new Partie(3,4);
         Unite unite1 = new Unite( 2, TypeUnite.BUCHERON);
         Unite unite2 = new Unite( 3, TypeUnite.MINEUR);
