@@ -5,31 +5,8 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class App extends JFrame {
-    public App() {
-        initGUI();
-    }
-
-    private void initGUI() {
-        setTitle("Jeu de Plateau");
-        setSize(800, 800);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        GlobalState.plateau = new PlateauGUI(20);
-        getContentPane().add(GlobalState.plateau);
-    }
-
     public static void main(String[] args) {
 
-        // show the gui 
-        App app = new App();
-        app.setVisible(true);
-
-            // load image
-        ImageIcon icon = new ImageIcon("image/Basic_red_dot.png");
-
-    // set image to a specific button
-        GlobalState.plateau.setImageAt(1, 1, icon);
 
         // set 
         /*SwingUtilities.invokeLater(new Runnable() {
