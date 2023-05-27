@@ -31,4 +31,15 @@ public class Partie extends JFrame {
     this.coffre= new Coffre();
 }
 
+public void initPartie(){
+  this.grille.initGrille();
+}
+public String toString(){
+  String res="La partie:\n";
+  res+=this.grille.toString();
+  res+="Le coffre\n";
+  res+=this.coffre.toString();
+  return res;
+}
+
 }
