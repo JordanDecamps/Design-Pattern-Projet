@@ -1,6 +1,4 @@
-package design.pattern;
-
-import design.pattern.projet.TypeUnite;
+package design.pattern.projet;
 
 public class ProductionBatiment implements Batiments {
 
