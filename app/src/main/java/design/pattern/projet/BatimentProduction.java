@@ -1,6 +1,6 @@
 package design.pattern.projet;
 
-public interface Batiments {
+public interface BatimentProduction {
     void construire();
     void remove();
 }

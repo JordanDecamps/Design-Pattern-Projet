@@ -41,9 +41,9 @@ public class App extends JFrame {
         Groupe groupe = new Groupe(liste);
         System.out.println(groupe);*/
         partie.initPartie();
-        System.out.println(partie);
+        //System.out.println(partie);
         partie.tour();
-        System.out.println(partie);
+        //System.out.println(partie);
 
     }
 }

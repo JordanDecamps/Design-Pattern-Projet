@@ -11,7 +11,7 @@ public class Coffre {
     public Coffre() {
         ressources = new HashMap<>();
         for(Ressources res : Ressources.values()){
-            ressources.put(res,0);
+            ressources.put(res,20);
         }
     }
 
