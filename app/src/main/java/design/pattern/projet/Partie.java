@@ -1,6 +1,7 @@
 package design.pattern.projet;
 
 import javax.swing.JFrame;
+import java.util.Scanner;
 
 public class Partie extends JFrame {
   public Grille grille;
@@ -34,9 +35,20 @@ public class Partie extends JFrame {
 public void initPartie(){
   this.grille.initGrille();
 }
+
 public void tour(){
-  System.out.println(this.grille);
-  this.grille.tour(this.coffre);
+    /*System.out.println(this.grille);
+    this.grille.tour(this.coffre);
+    */
+    Scanner scanner = new Scanner(System.in);
+    String input = scanner.nextLine();
+
+    if (input.equalsIgnoreCase("S")) {
+      System.out.println("Tour suivant");
+      this.grille.tour(this.coffre);
+    } else {
+        System.out.println("S n'a pas été saisi, le tour ne passe pas au suivant.");
+    }
 }
 public String toString(){
   String res="La partie:\n";
