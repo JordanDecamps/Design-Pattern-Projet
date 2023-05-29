@@ -1,6 +1,6 @@
 package design.pattern.projet;
 
-
+import com.google.errorprone.annotations.OverridingMethodsMustInvokeSuper;
 
 public class DecorateurExpertUnite extends Unite{
     protected Unite unite;
@@ -15,5 +15,9 @@ public class DecorateurExpertUnite extends Unite{
         return 2;
     }
 
+    @Override
+    public int QuantiteRamassage(){
+        return 2;
+    }
 
 }
