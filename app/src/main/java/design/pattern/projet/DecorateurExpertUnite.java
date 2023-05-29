@@ -11,12 +11,12 @@ public class DecorateurExpertUnite extends Unite{
 
     @Override
     public int valNouriture(){
-        return 2;
+        return unite.valNouriture()*2;
     }
 
     @Override
     public int QuantiteRamassage(){
-        return 2;
+        return unite.QuantiteRamassage()*2;
     }
 
 }
