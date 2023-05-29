@@ -66,6 +66,9 @@ public void tour(){
       if(input.equals("T")){
         this.grille.tour(coffre);
       }
+      if(input.equals("G")){
+          gestionGroupe();
+      }
       poserQuestions();
       input = scanner.nextLine();
 
@@ -75,8 +78,9 @@ public void tour(){
 
 public void poserQuestions(){
   System.out.println("Voici la grille:");
-  System.out.println(this);
+  System.out.println(this.grille);
   System.out.println("Saisir B pour gérer les batiments");
+  System.out.println("Saisir G pour gérer les groupes");
   System.out.println("Saisir T pour lancer un tour (nourrir + récolte)");
   System.out.println("Saisir Q pour sortir");
 }
@@ -220,6 +224,68 @@ public String affichageBatimentsCreationOutils(){
   }
   return res;
 }
+
+
+public void creerGroupe(){
+    ArrayList<Unite> listeUnites= new ArrayList<Unite>();
+    System.out.println("Rentrer le nom du groupe");
+    Scanner scanner = new Scanner(System.in);
+    String name=scanner.nextLine();
+    String test = "";
+    while( !test.equals("stop")){
+      
+    System.out.println("Donner la coordonnée x de la première case ou se trouve l'unité que vous voulez mettre dans le groupe");
+    int x=scanner.nextInt();
+    System.out.println("Donner la coordonnée y de la première case ou se trouve l'unité que vous voulez mettre dans le groupe");
+    int y=scanner.nextInt();
+    int index=0;
+    for(Unite unite : this.grille.grille[x][y].listeUnitesCase){
+      System.out.println(index+" :"+ unite+ "\n");
+      index++;
+    } 
+    System.out.println("entrez le numero correspondant");
+    int UnitePickIndex=scanner.nextInt();
+    if(this.grille.grille[x][y].listeUnitesCase.get(UnitePickIndex).groupe == null){
+      listeUnites.add(this.grille.grille[x][y].listeUnitesCase.get(UnitePickIndex));
+    }
+    else{
+      System.out.println("il a deja un groupe");
+    }
+    System.out.println("si vous souhaité arreter de rajouter taper stop sinon tou autre texte");
+    test=scanner.nextLine();
+    test=scanner.nextLine();
+    }
+    if(listeUnites.size()>=2){
+      Groupe groupe=new Groupe(listeUnites, name);
+      for (Unite unite: listeUnites){
+        unite.groupe=groupe;
+        this.grille.deplacerUnite(unite, groupe.x, groupe.y);
+       
+    }
+    }
+    else{
+      System.out.println("donnée inutilisable");
+    }
+
+
+
+}
+
+public void gestionGroupe(){
+  System.out.println("Rentrer C pour créer et S pour supprimer");
+  Scanner scanner = new Scanner(System.in);
+  String rep=scanner.nextLine();
+  if(rep.equals("C")){
+    creerGroupe();
+
+  }
+  else{
+    this.grille.selectionGroupeexistant();
+  }
+}
+
+
+
 
 public String toString(){
   String res="La partie:\n";

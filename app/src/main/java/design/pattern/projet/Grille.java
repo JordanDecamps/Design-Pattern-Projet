@@ -1,5 +1,7 @@
 package design.pattern.projet;
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Grille {
 
@@ -61,19 +63,55 @@ public class Grille {
 
     public void ajouterUnite(TypeUnite type){
         Random random = new Random();
-        this.grille[random.nextInt(x)][random.nextInt(y)].listeUnitesCase.add(new Unite(1, type));
+        int randx=random.nextInt(x);
+        int randy=random.nextInt(y);
+        this.grille[randx][randy].listeUnitesCase.add(new Unite(1, type, randx, randy));
     }
 
     public void tour(Coffre coffre){
+        travailler(coffre);
+    }
+
+    public void travailler(Coffre coffre){
         for (int index = 0; index < x; index++) {
             for (int index2 = 0; index2 < y; index2++) {
                 for (Unite unite : this.grille[index][index2].listeUnitesCase) {
-                    unite.outils.Recolter(coffre, this.grille[index][index2]);
+                    unite.outils.Recolter(coffre, this.grille[index][index2], unite.valeurRecolte());
                 }
             }
         }
     }
- 
+    
+    public void deplacerUnite(Unite unite, int xnew, int ynew){
+        grille[unite.x][unite.y].listeUnitesCase.remove(unite);
+        grille[xnew][ynew].listeUnitesCase.add(unite);
+        unite.x=xnew;
+        unite.y=ynew;
+    }
+
+    public void selectionGroupeexistant(){
+        int nb=0;
+        ArrayList<Groupe> listeGroupeExistant= new ArrayList<Groupe>();
+        for (int index = 0; index < x; index++) {
+            for (int index2 = 0; index2 < y; index2++) {
+              for (Unite unite :this.grille[index][index2].listeUnitesCase){
+                if(unite.groupe!= null){
+                    if(!listeGroupeExistant.contains(unite.groupe)){
+                        System.out.println(nb+" "+unite.groupe.nom);
+                        nb++;
+                        listeGroupeExistant.add(unite.groupe);
+                    }
+                }
+              }
+            }
+          }
+          Scanner scanner = new Scanner(System.in);
+        System.out.println("entrez le numero du groupe que vous voulez supprimé ");
+        int choix=scanner.nextInt();
+        System.out.println(listeGroupeExistant.get(choix));
+         listeGroupeExistant.get(choix).supprimerTout();
+         
+    }
 
     
 
