@@ -1,6 +1,5 @@
 package design.pattern.projet;
 
-import com.google.errorprone.annotations.OverridingMethodsMustInvokeSuper;
 
 public class DecorateurExpertUnite extends Unite{
     protected Unite unite;
