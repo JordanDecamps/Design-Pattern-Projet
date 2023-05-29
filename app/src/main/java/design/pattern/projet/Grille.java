@@ -65,7 +65,8 @@ public class Grille {
         Random random = new Random();
         int randx=random.nextInt(x);
         int randy=random.nextInt(y);
-        this.grille[randx][randy].listeUnitesCase.add(new Unite(1, type, randx, randy));
+        int niveau = 1;
+        this.grille[randx][randy].listeUnitesCase.add(new Unite(1, type, randx, randy, niveau));
     }
     public void finTour(){
         for (int index = 0; index < x; index++) {
@@ -83,6 +84,10 @@ public class Grille {
         for (int index = 0; index < x; index++) {
             for (int index2 = 0; index2 < y; index2++) {
                 for (Unite unite : this.grille[index][index2].listeUnitesCase) {
+                    if(unite.niveau ==5){
+                        unite= new DecorateurExpertUnite(unite);
+                        unite.niveau+=1;
+                    }
                     unite.nourrir(coffre);
                 }
             }

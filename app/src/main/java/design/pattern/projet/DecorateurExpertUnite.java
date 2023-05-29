@@ -5,7 +5,7 @@ public class DecorateurExpertUnite extends Unite{
     protected Unite unite;
     public DecorateurExpertUnite(Unite unite) {
         
-        super(unite.vitesse, unite.type, unite.x, unite.y );
+        super(unite.vitesse, unite.type, unite.x, unite.y, unite.niveau );
         this.unite=unite;
     }
 

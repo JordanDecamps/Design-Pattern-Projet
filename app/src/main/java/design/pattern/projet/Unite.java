@@ -11,7 +11,9 @@ public class Unite {
     public Boolean aTravaille;
     public Boolean aMange;
 
-    public Unite(int vitesse, TypeUnite type, int x, int y) {
+    public int niveau;
+
+    public Unite(int vitesse, TypeUnite type, int x, int y, int niveau) {
         this.vitesse = vitesse;
         this.type = type;
         this.outils=  OutilsFactory.getInstance().getOutils(type);
@@ -20,12 +22,13 @@ public class Unite {
         this.y=y;
         this.aTravaille=false;
         this.aMange=false;
+        this.niveau = niveau;
 
 
     }
     @Override
     public String toString() {
-        String elem="Unite [vitesse=" + vitesse + ", type=" + type.toString() +"groupe=";
+        String elem="Unite [vitesse=" + vitesse + ", type=" + type.toString() + ", niveau=" + niveau +"groupe=";
        if(groupe == null){
             elem=elem+" aucun ]";
         }
