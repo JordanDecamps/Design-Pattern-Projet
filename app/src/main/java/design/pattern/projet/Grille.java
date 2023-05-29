@@ -67,18 +67,51 @@ public class Grille {
         int randy=random.nextInt(y);
         this.grille[randx][randy].listeUnitesCase.add(new Unite(1, type, randx, randy));
     }
+    public void finTour(){
+        for (int index = 0; index < x; index++) {
+            for (int index2 = 0; index2 < y; index2++) {
+                for (Unite unite : this.grille[index][index2].listeUnitesCase) {
+                    unite.aTravaille=false;
+                    unite.aMange=false;
+                }
+            }
+        }
+
+    }
+
+    public void nourrir(Coffre coffre){
+        for (int index = 0; index < x; index++) {
+            for (int index2 = 0; index2 < y; index2++) {
+                for (Unite unite : this.grille[index][index2].listeUnitesCase) {
+                    unite.nourrir(coffre);
+                }
+            }
+        }
+    }
 
     public void tour(Coffre coffre){
+        nourrir(coffre);
         travailler(coffre);
+        finTour();
     }
 
     public void travailler(Coffre coffre){
         for (int index = 0; index < x; index++) {
             for (int index2 = 0; index2 < y; index2++) {
                 for (Unite unite : this.grille[index][index2].listeUnitesCase) {
-                    unite.outils.Recolter(coffre, this.grille[index][index2], unite.valeurRecolte());
+                    if(unite.aTravaille==false && unite.aMange==true){
+                        unite.outils.Recolter(coffre, this.grille[index][index2], unite.valeurRecolte());
+                        if(unite.groupe!= null){
+                         unite.groupe.AccomplisPourTous();
+                        }
+                        else{
+                         unite.aTravaille=true;
+                        }
+
+                    }
+                   
                 }
-            }
+            }   
         }
     }
     

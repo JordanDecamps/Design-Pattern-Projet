@@ -78,7 +78,7 @@ public void tour(){
 
 public void poserQuestions(){
   System.out.println("Voici la grille:");
-  System.out.println(this.grille);
+  System.out.println(this);
   System.out.println("Saisir B pour gérer les batiments");
   System.out.println("Saisir G pour gérer les groupes");
   System.out.println("Saisir T pour lancer un tour (nourrir + récolte)");

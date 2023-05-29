@@ -11,7 +11,7 @@ public class Coffre {
     public Coffre() {
         ressources = new HashMap<>();
         for(Ressources res : Ressources.values()){
-            ressources.put(res,20);
+            ressources.put(res,200);
         }
     }
 
@@ -28,6 +28,17 @@ public class Coffre {
         }
 
         return texte;
+    }
+
+    public Boolean nourrir(int quantite){
+        if(ressources.get(Ressources.Nourriture)-quantite>=0){
+            ressources.put(Ressources.Nourriture, ressources.get(Ressources.Nourriture)-quantite);
+            return true;
+        }
+        else{
+            return false;
+        }
+       
     }
 
 }

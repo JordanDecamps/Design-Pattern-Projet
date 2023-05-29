@@ -8,6 +8,9 @@ public class Unite {
     public Groupe groupe;
     public int x;
     public int y;
+    public Boolean aTravaille;
+    public Boolean aMange;
+
     public Unite(int vitesse, TypeUnite type, int x, int y) {
         this.vitesse = vitesse;
         this.type = type;
@@ -15,6 +18,8 @@ public class Unite {
         this.groupe=null;
         this.x=x;
         this.y=y;
+        this.aTravaille=false;
+        this.aMange=false;
 
 
     }
@@ -30,15 +35,35 @@ public class Unite {
 
         return elem;
     }
+    public int QuantiteRamassage(){
+        return 1;
+    }
     public int valeurRecolte(){
-        int val; 
+       
         if(this.groupe==null){
-            val=1;
+           return QuantiteRamassage();
         }
         else{
-            val=2;
+           return groupe.quantitéTotaleRamassage();
         }
-        return val;
+       
+    }
+    public int valNouriture(){
+        return 1;
+    }
+
+    public void nourrir(Coffre coffre){
+       
+    if(coffre.nourrir(valNouriture())==true){
+        aMange=true;
+    }
+    else{
+        if(groupe!= null){
+            groupe.supprimer(this);
+        }
+    }
+       
+        
     }
 
 

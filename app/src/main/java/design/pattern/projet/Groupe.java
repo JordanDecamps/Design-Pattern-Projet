@@ -34,7 +34,22 @@ public class Groupe {
         this.listeUnite.remove(unite);
         unite.groupe=null;
     }
+     
+    public int quantitéTotaleRamassage(){
+        int tot=0;
+        for(Unite unite: listeUnite){
+           tot+=unite.QuantiteRamassage();
+        }
+      
+       
+       return (int) Math.round((1 + ((double)(this.listeUnite.size() - 1) / 10)) * tot);
+    }
 
+    public void AccomplisPourTous(){
+        for(Unite unite: listeUnite){
+            unite.aTravaille=true;
+        }
+    }
     
 
     
